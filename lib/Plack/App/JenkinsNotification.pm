@@ -1,7 +1,7 @@
 package Plack::App::JenkinsNotification;
 use strict;
 use warnings;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 use parent qw/Plack::Component/;
 use Plack::Util;
 use Plack::MIME;
@@ -23,7 +23,7 @@ sub call {
     }
 
     my $response = Plack::Response->new(200);
-    $response->body("success");
+    $response->body('{ "success": 1 }');
     return $response->finalize;
 }
 
